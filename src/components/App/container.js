@@ -1,17 +1,17 @@
-
 import { connect } from 'react-redux'
 import App from './index'
+import { CreateMessage } from '../../store/actions/message.action'
 
 
-// const mapStateToProps = state => ({
+const mapStateToProps = state => ({
+  messages: state.message.messages
+})
 
-// })
-
-// const mapDispatchToProps = dispatch => ({
-
-// })
+const mapDispatchToProps = dispatch => ({
+  CreateMessage: value => dispatch(CreateMessage(value))
+})
 
 export default connect(
-  // mapStateToProps,
-  // mapDispatchToProps,
+  mapStateToProps,
+  mapDispatchToProps,
 )(App)

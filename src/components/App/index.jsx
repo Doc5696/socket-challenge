@@ -24,6 +24,8 @@ class App extends React.Component {
 
   render() {
     const { messages } = this.state
+    const { CreateMessage } = this.props
+    console.log("TCL: App -> render -> messages", this.props.messages)
     return (
       <>
         <StyledContainer>
@@ -35,7 +37,9 @@ class App extends React.Component {
             />
           ))}
         </StyledContainer>
-        <MessageCreator />
+        <MessageCreator
+          onClick={CreateMessage}
+        />
       </>
     );
   }
