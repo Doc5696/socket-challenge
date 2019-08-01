@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from '../Message'
-import { subscribeToTimer } from '../../services/api';
+import { subscribeToTimer } from '../../store/api';
 import StyledContainer from './styled/StyledContainer'
 import MessageCreator from '../MessageCreator'
 
@@ -17,7 +17,7 @@ class App extends React.Component {
   componentDidMount() {
     subscribeToTimer((err, newBleat) => this.setState(prevState => ({
       ...this.state,
-      messages: [JSON.parse(newBleat), ...prevState.messages]
+      messages: [ JSON.parse(newBleat), ...prevState.messages ]
     })));
   }
 
