@@ -10,13 +10,14 @@ const StyledMessage = styled.div`
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: ${({ isOwn }) => (isOwn ? '#555' : '#fff')};
   p{
-    color: #555;
+    color: ${({ isOwn }) => (isOwn ? '#fff' : '#555')};
     font-size: 16px;
   }
   .date{
     font-size: 12px;
-    color: #999;
+    color: ${({ isOwn }) => (isOwn ? '#eee' : '#999')};
   }
 `
 

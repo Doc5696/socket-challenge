@@ -4,8 +4,9 @@ import StyledMessage from './styled/StyledMessage'
 const Message = ({
   message,
   date,
+  isOwn,
 }) => (
-  <StyledMessage>
+  <StyledMessage isOwn={isOwn}>
     <p>
       {message}
     </p>

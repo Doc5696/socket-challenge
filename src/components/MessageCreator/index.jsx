@@ -8,12 +8,19 @@ const MessageCreator = ({
   onClick
 }) => {
   const [value, setValue] = useState('');
-  console.log("TCL: value", value)
+  const nowDate = new Date();
+  const handleClick = () => {
+    onClick({message: value, date: +nowDate})
+    setValue('')
+  }
   return (
     <StyledWrapper>
-        <StyledTextArea onChange={e => setValue(e.target.value)} />
+        <StyledTextArea
+          value={value}
+          onChange={e => setValue(e.target.value)} />
         <StyledButton
-          onClick={() => onClick(value)}
+          disabled={!value}
+          onClick={() => handleClick()}
         >
           Send
         </StyledButton>
